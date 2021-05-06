@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<h1 class="loginHead"><a href="/feed">T.7.Q.A.R</a></h1>
+
+  <main class="container">
+    <div class="row justify-content-center indexBox">
+      <section class="loginSec">
+        <form action="/signup" method="POST" class='loginForm'>
+          <!-- UserName blocks -->
+           <div class="mb-3">
+              <label for="userName" class="form-label">User Name</label>
+              <input type="text" class="form-control marginB" id="userName" name="userName" required>
+            </div>
+            <!-- Email blocks -->
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control marginB" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <!-- Password blocks -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control marginB" id="password" name="password">
+            </div>
+            <!-- Confirm Password blocks -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control marginB" id="confirmPassword" name="confirmPassword">
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+      </div>
+  </main>
+
+<%- include('partials/footer') -%>

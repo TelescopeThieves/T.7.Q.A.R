@@ -1,0 +1,81 @@
+<%- include('partials/header') -%>
+      
+<section class='home'>
+  <section class='navigation'>
+   <section class='userInfoSec'>
+      <h2 class="marginB"><a href="/feed">T.7.Q.A.R</a></h2>
+      <h2 class="username"><%= user.userName %></h2>
+      <h3 class="email muted"><%= user.email %></h3>
+    </section>
+   <section>
+      <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+      <h2>Add a post</h2>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control marginB" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+          <label for="caption" class="form-label">Caption</label>
+          <textarea class="form-control marginB" id="caption" name="caption" rows='8' required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="imgUpload" class="form-label">Image</label>
+          <input type="file" class="form-control marginB" id="imageUpload" name="file" required>
+        </div>
+        <div class="form-footer mb-3">
+          <button type="submit" class="submit btn btn-primary" value="Upload">Submit</button>
+          
+        </div> 
+    </form>
+    </section>
+    <section>
+    <button class="logout">
+          <a href="/logout">Logout</a>
+          </button>
+    </section>
+  </section>
+
+ <!-- Feed Generator -->
+  <section class='feed'>
+    <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <!-- Post Title -->
+          <h2><%= posts[i].title %> </h2>
+          <!-- Post Image -->
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/getPost/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+         <!-- Post Caption -->
+          <h3 class="caption marginB"><%= posts[i].caption%></h3>
+         <!-- Post Likes -->
+          <h3 class="likes col-3 marginB">Likes: <%=posts[i].likes%></h3>
+          <!-- Post Likes Button -->
+          <form class="col-1" action="/post/likePost/<%= posts[i]._id%>?_method=PUT" method="POST">
+              <button class="marginB btn like-btn btn-primary fa fa-heart" type="submit"></button>
+          </form>
+          <section class='editDeleteSec'>
+          <!-- Post User Checker -->
+          <% if(user.id == posts[i].user) { %>
+            <!-- Edit button --> <!-- CHANGE THE EDIT BUTTON TO GO TO SINGLE POST PAGE -->
+            <form class="col-1" action="/post/editPost/<%= posts[i]._id%>?_method=GET" method="POST">
+              <textarea class="form-control marginB captionEdit" id="caption" name="caption" required rows='8'></textarea>
+              <button class="marginB btn btn-primary fa fa-edit" type="submit"></button>
+            </form>
+            <!-- Delete button -->
+            <form class="col-1" action="/post/deletePost/<%= posts[i]._id%>?_method=DELETE" method="POST">
+              <button class="marginB btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+            <% } %> 
+            </section> 
+          <% } %>
+        </ul>
+      </div>
+    </div>  
+  </section>
+</section>
+
+<%- include('partials/footer') -%>
