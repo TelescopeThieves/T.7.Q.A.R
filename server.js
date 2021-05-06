@@ -11,6 +11,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
 
+
 require('dotenv').config({path: './config/.env'})
 // Passport config
 require("./config/passport")(passport);
@@ -57,6 +58,6 @@ app.use('/', mainRoutes)
 app.use('/post', postRoutes);
 
 // Server running
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server is running, you better catch it!', `It's running on ${PORT}`)
 })
