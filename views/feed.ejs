@@ -24,7 +24,6 @@
         </div>
         <div class="form-footer mb-3">
           <button type="submit" class="submit btn btn-primary" value="Upload">Submit</button>
-          
         </div> 
     </form>
     </section>
@@ -42,7 +41,7 @@
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <!-- Post Title -->
-          <h2><%= posts[i].title %> </h2>
+          <h2 class="post-title"><%= posts[i].title %> </h2>
           <!-- Post Image -->
           <li class="col-6 justify-content-between mt-5">
             <a href="/post/getPost/<%= posts[i]._id%>">
@@ -50,7 +49,7 @@
             </a>
           </li>
          <!-- Post Caption -->
-          <h3 class="caption marginB"><%= posts[i].caption%></h3>
+          <h3 class="caption muted marginB"><%= posts[i].caption%></h3>
          <!-- Post Likes -->
           <h3 class="likes col-3 marginB">Likes: <%=posts[i].likes%></h3>
           <!-- Post Likes Button -->

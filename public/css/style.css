@@ -7,7 +7,15 @@
   list-style:none;
   font-family: 'Inter', sans-serif;
 }
-h1{
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  max-height: 100vh;
+}
+
+
+h1 {
   font-size: 4.236rem;
 }
 /* h2{
@@ -29,10 +37,7 @@ p,span{
   padding: 1rem 3rem;
   text-align: center;
 }
-:root {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-}
+
 
 .indexBox{
     display: flex;
@@ -42,6 +47,7 @@ p,span{
     position: relative;
     align-items: center;
 }
+
 .loginSec{
   width: 100%;
 }
@@ -51,7 +57,7 @@ p,span{
 }
 
 .muted {
-  color: #006DAA;
+  color: #808080;
 }
 
 
@@ -96,7 +102,6 @@ header {
   /* text-align: center; */
   z-index: 10;
   padding: 1rem 3rem;
-  
 }
 
 .img-fluid {
@@ -143,8 +148,6 @@ header {
     position: fixed;
     min-height: 100vh;
     z-index: 100;
-    
-
 }
 
 .navigation > h1 {
@@ -168,6 +171,11 @@ form {
   /* margin-top: 2em; */
   max-width: 100%;  
 }
+
+#title {
+  height: 30px;
+}
+
 input, textarea{
   display: block;
   width: 100%;
@@ -197,6 +205,14 @@ a{
   height: 3rem;
 
 }
+/* .btn-primary { 
+  display: flex;
+  text-align: center;
+  color: rgb(39, 129, 164);
+  background-color: white;
+  border: 3px solid rgb(39, 129, 164);
+  border-radius: 3px;
+} */
 
 .btn-primary{
   text-align: center;
@@ -239,14 +255,6 @@ a{
   background: #fff;
 }
 
-.btn-primary {
-  /* display: flex; */
-  text-align: center;
-  color: rgb(39, 129, 164);
-  background-color: white;
-  border: 3px solid rgb(39, 129, 164);
-  border-radius: 3px;
-}
 
 .indexBtn{
   background-color: white;
@@ -257,4 +265,45 @@ a{
   padding: 1rem 0;
   display: inline-block;
   width: 6rem;
+}
+
+
+@media all and (min-width: 300px) and (max-width: 768px) {
+  .loginForm {
+    width: 100%;
+  }
+  .form-control {
+    height: 2rem;  
+  }
+  h1 {
+    padding-top: 1em;
+  }
+  .home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+  .navigation{
+    background-color: rgba(240, 240, 25,0.8);
+    width: 100%;
+    justify-content:space-evenly;
+    max-height: fit-content;
+    position: relative;
+}
+  .feed {
+    width: 100%;
+    max-width: 50%;
+  }
+  .post-title {
+    padding: .5em;
+  }
+  .img-fluid {
+      /* margin-left: 50%; */
+      border-radius: 5px;
+      width: 100%;
+  }
+  .caption, .likes {
+    font-size: 1em;
+  }  
 }
