@@ -1,4 +1,5 @@
 const Post = require('../models/Post')
+const cloudinary = require("../middleware/cloudinary");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -39,7 +40,7 @@ module.exports = {
 
       await Post.create({
         title: req.body.title,
-        image: '/uploads/' + req.file.filename,
+        image: result.secure_url,
         cloudinaryId: result.public_id, // cloudinary
         caption: req.body.caption,
         likes: 0,
