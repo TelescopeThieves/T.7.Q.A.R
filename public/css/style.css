@@ -51,10 +51,6 @@ input,textarea{
   border-radius: 5px;
   padding: 1rem;
 }
-a.imageLink{
-  display: flex;
-  justify-content: center;
-}
 .editDeleteSec{
   width: 100%;
 }
