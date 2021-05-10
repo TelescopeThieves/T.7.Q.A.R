@@ -3,7 +3,7 @@
 <section class='home'>
   <section class='navigation'>
    <section class='userInfoSec'>
-      <h2 class="marginB"><a href="/feed">T.7.Q.A.R</a></h2>
+      <h1 class="marginB"><a href="/feed" class="titleFont">T.7.Q.A.R</a></h1>
       <h2 class="username"><%= user.userName %></h2>
       <h3 class="email muted"><%= user.email %></h3>
     </section>
@@ -42,21 +42,23 @@
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <!-- Post Title -->
-          <h2><%= posts[i].title %> </h2>
+          <h2 class="marginB postTitle"><%= posts[i].title %> </h2>
           <!-- Post Image -->
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/getPost/<%= posts[i]._id%>">
+          <li class="col-6 justify-content-between mt-5 imageSpace marginB">
+            <a href="/post/getPost/<%= posts[i]._id%>" class="imageLink">
               <img class="img-fluid" src="<%= posts[i].image%>">
             </a>
           </li>
-         <!-- Post Caption -->
-          <h3 class="caption marginB"><%= posts[i].caption%></h3>
-         <!-- Post Likes -->
-          <h3 class="likes col-3 marginB">Likes: <%=posts[i].likes%></h3>
-          <!-- Post Likes Button -->
-          <form class="col-1" action="/post/likePost/<%= posts[i]._id%>?_method=PUT" method="POST">
-              <button class="marginB btn like-btn btn-primary fa fa-heart" type="submit"></button>
-          </form>
+          <!-- Post Caption -->
+           <p class="caption marginB"><%= posts[i].caption%></p>
+          <section class="postInfoSec marginB">
+            <!-- Post Likes -->
+            <h3 class="likes col-3">Likes: <%=posts[i].likes%></h3>
+            <!-- Post Likes Button -->
+            <form class="col-1" action="/post/likePost/<%= posts[i]._id%>?_method=PUT" method="POST">
+              <button class=" btn like-btn btn-primary fa fa-heart" type="submit"></button>
+            </form>
+          </section>
           <section class='editDeleteSec'>
           <!-- Post User Checker -->
           <% if(user.id == posts[i].user) { %>
@@ -70,7 +72,7 @@
               <button class="marginB btn btn-primary fa fa-trash" type="submit"></button>
             </form>
             <% } %> 
-            </section> 
+          </section> 
           <% } %>
         </ul>
       </div>
