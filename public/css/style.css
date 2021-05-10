@@ -239,7 +239,7 @@ a{
   }
 }
 @media(max-width: 800px){
-  a{
+  a.imageLink{
     padding: 0;
   }
   .home{
