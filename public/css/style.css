@@ -239,6 +239,9 @@ a{
   }
 }
 @media(max-width: 800px){
+  a{
+    padding: 0;
+  }
   .home{
     flex-direction: column;
   }
