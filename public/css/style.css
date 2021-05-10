@@ -115,6 +115,7 @@ body {
 .img-fluid {
   border-radius: 5px;
   width: 75%;
+  height: auto;
 }
 
 .caption, .postTitle {
