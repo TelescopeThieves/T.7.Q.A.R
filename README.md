@@ -18,4 +18,4 @@ Special thanks to everyone involved in this project! Check out their GitHub prof
 <a target="_blank" href="https://github.com/mayanhavoc">Roberto  </a> <br />
 <a target="_blank" href="https://github.com/seyuan111">Sean Yuan </a> <br />
 
-![](public/images/t7qar.jpg)
+![](public/t7qar.jpg)
