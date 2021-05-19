@@ -6,7 +6,7 @@ T.7.Q.A.R is a social media clone that allows users to sign into their account t
 <a target="_blank" href="https://t7qar.herokuapp.com/">Demo Site</a>
 
 ## How It's Made
-**Tech used:** HTML, CSS, JavaScript, Embedded JavaScript, Node.js, Express, and MongoDB <br />
+**Tech used:** HTML, CSS, JavaScript, Embedded JavaScript, Express, MongoDB, Mongoose, Passport, Sessions, and Morgan. <br />
 
 ## Contributors
 Special thanks to everyone involved in this project! Check out their GitHub profiles! <br />
